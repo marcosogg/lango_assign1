@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/marcosogg/lango_assign1">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="public/images/lango.jpg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">LANGO</h3>
@@ -55,7 +55,7 @@
 
 ## About The Project
 
-About the project
+Lango is a point-of-interest (POI) application designed to help users discover and organize fascinating locations around the world. This project fulfills the requirements of Assignment #1 for my Full Stack module within my Computer Science degree program.
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
@@ -63,7 +63,15 @@ About the project
 
 ### Built With
 
-- [![Next][Next.js]][Next-url]
+- Frontend:
+  Handlebars
+  Bulma
+
+- Backend:
+  Node.js
+  Hapi
+  Joi
+  MongoDB
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,28 +84,16 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Node.js (version X or later)
+npm or yarn
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/marcosogg/lango_assign1.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = "ENTER YOUR API";
-   ```
+Steps:
+
+1. Clone the repository: git clone https://github.com/your-username/Lango.git
+2. Navigate to the project directory: cd Lango
+3. Install dependencies: npm install or yarn install
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -105,18 +101,14 @@ This is an example of how to list things you need to use the software and how to
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Start the development server: npm start or yarn start
+Open the application in your web browser, typically at http://localhost:3000
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 
 ## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-  - [ ] Nested Feature
 
 See the [open issues](https://github.com/marcosogg/lango_assign1/issues) for a full list of proposed features (and known issues).
 
@@ -126,10 +118,10 @@ See the [open issues](https://github.com/marcosogg/lango_assign1/issues) for a f
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+This is currently an assignment project. However, if you're interested in potential future collaborations or enhancements, feel free to:
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+Raise an issue for bug reports or feature suggestions.
+Fork the repository and create a pull request for code contributions.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -160,10 +152,6 @@ Project Link: [https://github.com/marcosogg/lango_assign1](https://github.com/ma
 <!-- ACKNOWLEDGMENTS -->
 
 ## Acknowledgments
-
-- []()
-- []()
-- []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
