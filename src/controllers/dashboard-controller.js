@@ -6,7 +6,7 @@ export const dashboardController = {
       const loggedInUser = request.auth.credentials;
       const collections = await db.collectionStore.getUserCollections(loggedInUser._id);
       const viewData = {
-        title: "Playtime Dashboard",
+        title: "Lango Dashboard",
         user: loggedInUser,
         collections: collections,
       };

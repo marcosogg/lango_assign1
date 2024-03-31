@@ -16,9 +16,9 @@ export const collectionController = {
     handler: async function (request, h) {
       const collection = await db.collectionStore.getCollectionById(request.params.id);
       const newPlace = {
-        title: request.payload.title,
-        artist: request.payload.artist,
-        duration: Number(request.payload.duration),
+        place: request.payload.place,
+        category: request.payload.category,
+        description: request.payload.description,
       };
       await db.placeStore.addPlace(collection._id, newPlace);
       return h.redirect(`/collection/${collection._id}`);
