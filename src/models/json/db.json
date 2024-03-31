@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "_id": "66c97636-6ba5-4441-b770-21a16e9054db",
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "__v": 0
+    },
+    {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "_id": "aac73913-517a-4d75-8433-4385ef4866de"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "_id": "f80eaca5-a7bf-498e-86ff-cc6dee56977c"
+    },
+    {
+      "firstName": "a",
+      "lastName": "a",
+      "email": "marcosogomes@gmail.com",
+      "password": "a",
+      "_id": "2b4fd301-5f50-4782-b8a9-38eeb47f691c"
+    },
+    {
+      "firstName": "teste_21:33",
+      "lastName": "dfdf",
+      "email": "tatu@gmail.com",
+      "password": "a",
+      "_id": "a6e2246f-1fad-41be-b080-bb9f75f00df8"
+    }
+  ],
+  "collections": [
+    {
+      "title": "Mozart Favourites",
+      "_id": "5b410694-a443-442d-8bc8-553ce00c1a11"
+    }
+  ],
+  "places": [
+    {
+      "title": "Piano Sonata No. 3",
+      "artist": "Beethoven",
+      "duration": 5,
+      "_id": "5c84ba60-3f51-4d37-8804-467a74673325",
+      "collectionid": "5b410694-a443-442d-8bc8-553ce00c1a11"
+    },
+    {
+      "title": "Piano Sonata No. 7",
+      "artist": "Beethoven",
+      "duration": 6,
+      "_id": "222f62ca-c718-4a6e-bd75-cedc6789eede",
+      "collectionid": "5b410694-a443-442d-8bc8-553ce00c1a11"
+    },
+    {
+      "title": "Piano Sonata No. 10",
+      "artist": "Beethoven",
+      "duration": 4,
+      "_id": "864ac28c-bea5-45da-8c2f-ce338c9b0ea9",
+      "collectionid": "5b410694-a443-442d-8bc8-553ce00c1a11"
+    }
+  ]
+}
