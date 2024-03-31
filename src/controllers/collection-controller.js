@@ -19,6 +19,8 @@ export const collectionController = {
         place: request.payload.place,
         category: request.payload.category,
         description: request.payload.description,
+        lat: request.payload.lat,
+        long: request.payload.long,
       };
       await db.placeStore.addPlace(collection._id, newPlace);
       return h.redirect(`/collection/${collection._id}`);

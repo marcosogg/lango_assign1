@@ -39,5 +39,7 @@ export const placeMemStore = {
     place.title = updatedPlace.title;
     place.category = updatedPlace.category;
     place.description = updatedPlace.description;
+    place.lat = updatedPlace.lat;
+    place.long = updatedPlace.long;
   },
 };
