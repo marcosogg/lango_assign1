@@ -2,7 +2,9 @@ import Vision from "@hapi/vision";
 import Hapi from "@hapi/hapi";
 import Cookie from "@hapi/cookie";
 import Inert from "@hapi/inert";
+import dotenv from "dotenv";
 import path from "path";
+import Joi from "joi";
 import { fileURLToPath } from "url";
 import Handlebars from "handlebars";
 import { apiRoutes } from "./api-routes.js";
@@ -13,14 +15,22 @@ import { accountsController } from "./controllers/accounts-controller.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const result = dotenv.config();
+if (result.error) {
+  console.log(result.error.message);
+  process.exit(1);
+}
+
 async function init() {
   const server = Hapi.server({
     port: process.env.PORT || 3000,
   });
 
+  await server.register(Inert);
   await server.register(Vision);
   await server.register(Cookie);
-  await server.register(Inert);
+  
+  server.validator(Joi);
 
   server.views({
     engines: {
@@ -36,8 +46,8 @@ async function init() {
 
   server.auth.strategy("session", "cookie", {
     cookie: {
-      name: "lango",
-      password: "secretpasswordnotrevealedtoanyone",
+      name: process.env.cookie_name,
+      password: process.env.cookie_password,
       isSecure: false,
     },
     redirectTo: "/",
