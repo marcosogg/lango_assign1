@@ -1,69 +1,74 @@
 {
   "users": [
     {
-      "_id": "66c97636-6ba5-4441-b770-21a16e9054db",
-      "firstName": "Bart",
+      "firstName": "Homer",
       "lastName": "Simpson",
-      "email": "bart@simpson.com",
+      "email": "homer@simpson.com",
       "password": "secret",
-      "__v": 0
+      "_id": "34947cd4-b126-4d5d-8a9a-3c8e489ca1d6"
     },
     {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "aac73913-517a-4d75-8433-4385ef4866de"
+      "_id": "a76c7853-ef36-4b06-aef6-0657d6ffcd1e"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "f80eaca5-a7bf-498e-86ff-cc6dee56977c"
+      "_id": "56425952-fe2f-4660-a104-0a470b5fdfe9"
     },
     {
       "firstName": "a",
       "lastName": "a",
       "email": "marcosogomes@gmail.com",
       "password": "a",
-      "_id": "2b4fd301-5f50-4782-b8a9-38eeb47f691c"
+      "_id": "4e63584e-fb71-4a40-8a94-547da4c3a12a"
     },
     {
-      "firstName": "teste_21:33",
-      "lastName": "dfdf",
-      "email": "tatu@gmail.com",
+      "firstName": "a",
+      "lastName": "a",
+      "email": "marcos@gmail.com",
       "password": "a",
-      "_id": "a6e2246f-1fad-41be-b080-bb9f75f00df8"
+      "_id": "99f592be-201b-4637-be3a-dcc697dc0e17"
     }
   ],
   "collections": [
     {
       "title": "Mozart Favourites",
-      "_id": "5b410694-a443-442d-8bc8-553ce00c1a11"
+      "_id": "6cb79aa8-33c2-404e-bc5a-bf5b986a358d"
     }
   ],
   "places": [
     {
-      "title": "Piano Sonata No. 3",
-      "artist": "Beethoven",
-      "duration": 5,
-      "_id": "5c84ba60-3f51-4d37-8804-467a74673325",
-      "collectionid": "5b410694-a443-442d-8bc8-553ce00c1a11"
+      "place": "Djouce",
+      "category": "Peak",
+      "description": "Djouce at 725 metres, is the 74th highest peak in Ireland ",
+      "lat": "53.1305° N",
+      "long": "6.2393° W",
+      "_id": "b1f66e45-670f-4672-b0b0-74ad8b4c14dd",
+      "collectionid": "6cb79aa8-33c2-404e-bc5a-bf5b986a358d"
     },
     {
-      "title": "Piano Sonata No. 7",
-      "artist": "Beethoven",
-      "duration": 6,
-      "_id": "222f62ca-c718-4a6e-bd75-cedc6789eede",
-      "collectionid": "5b410694-a443-442d-8bc8-553ce00c1a11"
+      "place": "Glendalough",
+      "category": "Valley",
+      "description": "Glendalough is a glacial valley in County Wicklow, Ireland",
+      "lat": "53.0089° N",
+      "long": "6.3267° W",
+      "_id": "62455e39-a898-4106-a7da-05464721f040",
+      "collectionid": "6cb79aa8-33c2-404e-bc5a-bf5b986a358d"
     },
     {
-      "title": "Piano Sonata No. 10",
-      "artist": "Beethoven",
-      "duration": 4,
-      "_id": "864ac28c-bea5-45da-8c2f-ce338c9b0ea9",
-      "collectionid": "5b410694-a443-442d-8bc8-553ce00c1a11"
+      "place": "Kilkenny",
+      "category": "City",
+      "description": "Kilkenny is a city in County Kilkenny, Ireland",
+      "lat": "52.6541° N",
+      "long": "7.2523° W",
+      "_id": "c98a2802-5956-4337-b909-3fd2ee23b2b7",
+      "collectionid": "6cb79aa8-33c2-404e-bc5a-bf5b986a358d"
     }
   ]
 }
