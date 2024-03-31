@@ -24,4 +24,11 @@ export const collectionController = {
       return h.redirect(`/collection/${collection._id}`);
     },
   },
+  deletePlace: {
+    handler: async function(request, h) {
+      const collection = await db.collectionStore.getCollectionById(request.params.id);
+      await db.placeStore.deletePlace(request.params.placeid);
+      return h.redirect(`/collection/${collection._id}`);
+    },
+  },
 };

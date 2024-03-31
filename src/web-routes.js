@@ -19,4 +19,6 @@ export const webRoutes = [
   { method: "GET", path: "/collection/{id}", config: collectionController.index },
   { method: "POST", path: "/collection/{id}/addplace", config: collectionController.addPlace },
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
+  { method: "GET", path: "/dashboard/deletecollection/{id}", config: dashboardController.deleteCollection },
+  { method: "GET", path: "/collection/{id}/deleteplace/{placeid}", config: collectionController.deletePlace },
 ];
