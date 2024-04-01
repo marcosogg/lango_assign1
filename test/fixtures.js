@@ -33,9 +33,11 @@ export const mozart = {
 };
 
 export const concerto = {
-  "title": "Violin Concerto No. 3",
-  "artist": "Mozart",
-  "duration": 15
+  "place": "Glendalough",
+  "category": "Valley",
+  "description": "Glendalough is a glacial valley in County Wicklow, Ireland",
+  "lat": "53.0089",
+  "long": "6.3267",
 };
 
 
@@ -57,18 +59,24 @@ export const testCollections = [
 
 export const testPlaces = [
   {
-    "title": "Piano Sonata No. 3",
-    "artist": "Beethoven",
-    "duration": 5
+    "place": "Glendalough",
+    "category": "Valley",
+    "description": "Glendalough is a glacial valley in County Wicklow, Ireland",
+    "lat": "53.0089",
+    "long": "6.3267",
   },
   {
-    "title": "Piano Sonata No. 7",
-    "artist": "Beethoven",
-    "duration": 6
+    "place": "Glendalough",
+    "category": "Valley",
+    "description": "Glendalough is a glacial valley in County Wicklow, Ireland",
+    "lat": "53.0089",
+    "long": "6.3267",
   },
   {
-    "title": "Piano Sonata No. 10",
-    "artist": "Beethoven",
-    "duration": 4
+    "place": "Glendalough",
+    "category": "Valley",
+    "description": "Glendalough is a glacial valley in County Wicklow, Ireland",
+    "lat": "53.0089",
+    "long": "6.3267",
   }
 ];
