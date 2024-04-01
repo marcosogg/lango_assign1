@@ -56,7 +56,7 @@ export const placeJsonStore = {
   },
 
   async updatePlace(place, updatedPlace) {
-    place.title = updatedPlace.title;
+    place.place = updatedPlace.place;
     place.category = updatedPlace.category;
     place.description = updatedPlace.description;
     place.lat = updatedPlace.lat;

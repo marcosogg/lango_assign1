@@ -33,9 +33,9 @@ export const mozart = {
 };
 
 export const concerto = {
-  "title": "Violin Concerto No. 3",
-  "artist": "Mozart",
-  "duration": 15
+  "place": "Violin Concerto No. 3",
+  "category": "Mozart",
+  "description": 15
 };
 
 
