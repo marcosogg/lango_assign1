@@ -1,11 +1,12 @@
+import { EventEmitter } from "events";
 import { assert } from "chai";
 import { langoService } from "./lango-service.js";
 import { assertSubset } from "../test-utils.js";
-
 import { maggie, mozart, testCollections } from "../fixtures.js";
 
-suite("Collection API tests", () => {
+EventEmitter.setMaxListeners(25);
 
+suite("Collection API tests", () => {
   let user = null;
 
   setup(async () => {

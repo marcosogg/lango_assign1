@@ -1,5 +1,4 @@
 import axios from "axios";
-
 import { serviceUrl } from "../fixtures.js";
 
 export const langoService = {
@@ -47,6 +46,31 @@ export const langoService = {
 
   async getCollection(id) {
     const res = await axios.get(`${this.langoUrl}/api/collections/${id}`);
+    return res.data;
+  },
+
+  async getAllPlaces() {
+    const res = await axios.get(`${this.langoUrl}/api/places`);
+    return res.data;
+  },
+
+  async createPlace(id, place) {
+    const res = await axios.post(`${this.langoUrl}/api/collections/${id}/places`, place);
+    return res.data;
+  },
+
+  async deleteAllPlaces() {
+    const res = await axios.delete(`${this.langoUrl}/api/places`);
+    return res.data;
+  },
+
+  async getPlace(id) {
+    const res = await axios.get(`${this.langoUrl}/api/places/${id}`);
+    return res.data;
+  },
+
+  async deletePlace(id) {
+    const res = await axios.delete(`${this.langoUrl}/api/places/${id}`);
     return res.data;
   },
 };

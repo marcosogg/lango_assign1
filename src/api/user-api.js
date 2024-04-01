@@ -72,6 +72,6 @@ export const userApi = {
     },
     tags: ["api"],
     description: "Delete all userApi",
-    notes: "All userApi removed from Lango",
+    notes: "All userApi removed from Playtime",
   },
 };

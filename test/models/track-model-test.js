@@ -4,10 +4,11 @@ import { testCollections, testPlaces, beethoven, mozart, concerto, testUsers } f
 import { assertSubset } from "../test-utils.js";
 
 suite("Place Model tests", () => {
+
   let beethovenList = null;
 
   setup(async () => {
-    db.init("json");
+    db.init("mongo");
     await db.collectionStore.deleteAllCollections();
     await db.placeStore.deleteAllPlaces();
     beethovenList = await db.collectionStore.addCollection(beethoven);
@@ -19,14 +20,14 @@ suite("Place Model tests", () => {
 
   test("create single place", async () => {
     const mozartList = await db.collectionStore.addCollection(mozart);
-    const place = await db.placeStore.addPlace(mozartList._id, concerto);
+    const place = await db.placeStore.addPlace(mozartList._id, concerto)
     assert.isNotNull(place._id);
-    assertSubset(concerto, place);
+    assertSubset (concerto, place);
   });
 
   test("create multiple placeApi", async () => {
     const places = await db.collectionStore.getCollectionById(beethovenList._id);
-    assert.equal(testPlaces.length, testPlaces.length);
+    assert.equal(testPlaces.length, testPlaces.length)
   });
 
   test("delete all placeApi", async () => {
@@ -39,25 +40,26 @@ suite("Place Model tests", () => {
 
   test("get a place - success", async () => {
     const mozartList = await db.collectionStore.addCollection(mozart);
-    const place = await db.placeStore.addPlace(mozartList._id, concerto);
+    const place = await db.placeStore.addPlace(mozartList._id, concerto)
     const newPlace = await db.placeStore.getPlaceById(place._id);
-    assertSubset(concerto, newPlace);
+    assertSubset (concerto, newPlace);
   });
 
   test("delete One Place - success", async () => {
-    await db.placeStore.deletePlace(testPlaces[0]._id);
+    const id = testPlaces[0]._id;
+    await db.placeStore.deletePlace(id);
     const places = await db.placeStore.getAllPlaces();
-    assert.equal(places.length, testPlaces.length - 1);
-    const deletedPlace = await db.placeStore.getPlaceById(testPlaces[0]._id);
+    assert.equal(places.length, testCollections.length - 1);
+    const deletedPlace = await db.placeStore.getPlaceById(id);
     assert.isNull(deletedPlace);
   });
 
-  test("get a place - bad params", async () => {
+  test("get a collection - bad params", async () => {
     assert.isNull(await db.placeStore.getPlaceById(""));
     assert.isNull(await db.placeStore.getPlaceById());
   });
 
-  test("delete one place - fail", async () => {
+  test("delete One User - fail", async () => {
     await db.placeStore.deletePlace("bad-id");
     const places = await db.placeStore.getAllPlaces();
     assert.equal(places.length, testCollections.length);

@@ -33,9 +33,9 @@ export const mozart = {
 };
 
 export const concerto = {
-  "place": "Violin Concerto No. 3",
-  "category": "Mozart",
-  "description": 15
+  "title": "Violin Concerto No. 3",
+  "artist": "Mozart",
+  "duration": 15
 };
 
 
@@ -45,37 +45,30 @@ export const beethoven = {
 
 export const testCollections = [
   {
-    title: "Adventure"
+    title: "Beethoven Sonatas"
   },
   {
-    title: "Culture"
+    title: "Beethoven Concertos"
   },
   {
-    title: "Beautiful"
+    title: "Beethoven Symphonies"
   }
 ];
 
 export const testPlaces = [
   {
-    "place": "Djouce",
-    "category": "Peak",
-    "description": "Djouce at 725 metres, is the 74th highest peak in Ireland ",
-    "lat": "53.1305° N",
-    "long": "6.2393° W",
+    "title": "Piano Sonata No. 3",
+    "artist": "Beethoven",
+    "duration": 5
   },
-  { 
-    "place": "Glendalough",
-    "category": "Valley",
-    "description": "Glendalough is a glacial valley in County Wicklow, Ireland",
-    "lat": "53.0089° N", 
-    "long": "6.3267° W" 
-  },
-  // New Place 2:
   {
-    "place": "Kilkenny",
-    "category": "City",
-    "description": "Kilkenny is a city in County Kilkenny, Ireland",
-    "lat": "52.6541° N", 
-    "long": "7.2523° W"  
+    "title": "Piano Sonata No. 7",
+    "artist": "Beethoven",
+    "duration": 6
+  },
+  {
+    "title": "Piano Sonata No. 10",
+    "artist": "Beethoven",
+    "duration": 4
   }
 ];

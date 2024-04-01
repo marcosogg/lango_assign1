@@ -21,11 +21,9 @@ export const UserSpec = Joi.object()
 export const UserArray = Joi.array().items(UserSpec).label("UserArray");
 
 export const PlaceSpec = {
-  place: Joi.string().required(),
-  category: Joi.string().required(),
-  description: Joi.string().required(),
-  lat: Joi.number().allow("").optional(),
-  long: Joi.number().allow("").optional()
+  title: Joi.string().required(),
+  artist: Joi.string().required(),
+  duration: Joi.number().allow("").optional()
 };
 
 export const CollectionSpec = {

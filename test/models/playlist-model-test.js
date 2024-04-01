@@ -1,14 +1,12 @@
-import { EventEmitter } from "events";
 import { assert } from "chai";
 import { db } from "../../src/models/db.js";
 import { testCollections, mozart } from "../fixtures.js";
 import { assertSubset } from "../test-utils.js";
 
-EventEmitter.setMaxListeners(25);
-
 suite("Collection Model tests", () => {
+
   setup(async () => {
-    db.init("json");
+    db.init("mongo");
     await db.collectionStore.deleteAllCollections();
     for (let i = 0; i < testCollections.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
@@ -36,7 +34,7 @@ suite("Collection Model tests", () => {
     assertSubset(mozart, collection);
   });
 
-  test("delete One Collection - success", async () => {
+  test("delete One Playist - success", async () => {
     const id = testCollections[0]._id;
     await db.collectionStore.deleteCollectionById(id);
     const returnedCollections = await db.collectionStore.getAllCollections();
