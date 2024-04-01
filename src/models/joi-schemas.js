@@ -24,8 +24,8 @@ export const PlaceSpec = {
   place: Joi.string().required(),
   category: Joi.string().required(),
   description: Joi.string().required(),
-  lat: Joi.number().min(1).max(10).allow("").required(),
-  long: Joi.number().min(1).max(10).allow("").required(),
+  lat: Joi.number().allow(".").required(),
+  long: Joi.number().allow(".").required(),
 };
 
 export const CollectionSpec = {

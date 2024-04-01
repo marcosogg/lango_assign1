@@ -38,13 +38,26 @@ export const placeMongoStore = {
     await Place.deleteMany({});
   },
 
-  async updatePlace(place, updatedPlace) {
-    const placeDoc = await Place.findOne({ _id: place._id });
+  async updatePlace(placeId, updatedPlace) {
+    const placeDoc = await Place.findOne({ _id: placeId });
+  
+    if (!placeDoc) {
+      // Handle the scenario where no document was found
+      console.error(`No document found with _id: ${placeId}`);
+      // You could throw an error or return a value indicating failure
+      throw new Error("Document not found");
+      // Or, if you prefer to handle it more gracefully, you might return null or a specific response indicating the document was not found
+      // return null; // Example of a graceful handling
+    }
+  
+    // If document is found, proceed to update its fields
     placeDoc.place = updatedPlace.place;
     placeDoc.category = updatedPlace.category;
     placeDoc.description = updatedPlace.description;
     placeDoc.lat = updatedPlace.lat;
     placeDoc.long = updatedPlace.long;
+  
     await placeDoc.save();
-  },
+  }
+  
 };

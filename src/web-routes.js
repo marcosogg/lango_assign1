@@ -21,5 +21,8 @@ export const webRoutes = [
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
   { method: "GET", path: "/dashboard/deletecollection/{id}", config: dashboardController.deleteCollection },
   { method: "GET", path: "/collection/{id}/deleteplace/{placeid}", config: collectionController.deletePlace },
+  { method: "GET", path: "/collection/{id}/editplace/{placeid}", config: collectionController.editPlace },
+  { method: "POST", path: "/collection/{id}/updateplace/{placeid}", config: collectionController.updatePlace },
+  { method: "GET", path: "/collections", config: collectionController.getCollections },
 
 ];

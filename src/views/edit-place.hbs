@@ -1,0 +1,25 @@
+{{> menu}}
+
+<form class="box" method="POST" action="/collection/{{collection._id}}/updateplace/{{place._id}}">
+  <label>Update a Place:</label>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Place" name="place" value="{{place.place}}" required>
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Category" name="category" value="{{place.category}}" required>
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Description" name="description" value="{{place.description}}" required>
+      </div>
+      <div class="field">
+        <input class="input" type="number" placeholder="Enter Latitude" name="lat" value="{{place.lat}}" step="any" required>
+      </div>
+      <div class="field">
+        <input class="input" type="number" placeholder="Enter Longitude" name="long" value="{{place.long}}" step="any" required>
+      </div>
+    </div>
+  </div>
+  <button class="button is-primary">Update Place</button>
+</form>

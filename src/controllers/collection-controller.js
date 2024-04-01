@@ -42,4 +42,44 @@ export const collectionController = {
       return h.redirect(`/collection/${collection._id}`);
     },
   },
+  editPlace: {
+    handler: async function(request, h) {
+      const collection = await db.collectionStore.getCollectionById(request.params.id);
+      const place = await db.placeStore.getPlaceById(request.params.placeid);
+      // Render a page to edit the place details (form)
+      return h.view("edit-place", { collection, place });
+    },
+  },
+  updatePlace: {
+    handler: async function(request, h) {
+      const placeId = request.params.placeid;
+      const place = await db.placeStore.getPlaceById(placeId);
+  
+      if (!place) {
+        // Handle the case where the place is not found
+        console.log(`Place with ID ${placeId} not found.`);
+        return h.response("Place not found").code(404);
+      }
+  
+      const updatedPlace = {
+        place: request.payload.place || place.place,
+        category: request.payload.category || place.category,
+        description: request.payload.description || place.description,
+        lat: Number(request.payload.lat) || place.lat,
+        long: Number(request.payload.long) || place.long,
+      };
+  
+      await db.placeStore.updatePlace(placeId, updatedPlace);
+  
+      return h.redirect(`/collection/${request.params.id}`);
+    },
+  },
+  getCollections: {
+    handler: async function(request, h) {
+      const collections = await db.collectionStore.getAllCollections();
+      // Debug log to check what is being returned by getAllCollections
+      console.log(collections);
+      return h.view("collections", { collections });
+    },
+  }
 };
