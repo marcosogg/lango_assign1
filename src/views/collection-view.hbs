@@ -1,10 +1,36 @@
 {{> menu}}
 
 <section class="section">
-  <div class="title">
-    {{collection.title}}
+  <div class="columns">
+    <!-- Left Column for the Form -->
+    <div class="column is-two-thirds">
+      <div class="box">
+        <h1 class="title has-text-centered">{{collection.title}}</h1>
+        <hr>
+        <!-- Place the add-place form here -->
+        <div class="content">
+          {{> add-place}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column for the Image -->
+    <div class="column is-one-third">
+      <div class="box">
+        <!-- Place the collection-image here -->
+        <img src="{{collection.img}}" alt="Collection Image">
+        </figure>
+      </div>
+    </div>
   </div>
-  {{> add-place}}
-  <br>
-  {{> list-places}}
+
+  <!-- Full-width Row for the Listings -->
+  <div class="columns">
+    <div class="column is-full">
+      <div class="box">
+        <!-- Place the list-places here -->
+        {{> list-places}}
+      </div>
+    </div>
+  </div>
 </section>

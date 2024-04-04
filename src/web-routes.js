@@ -25,4 +25,6 @@ export const webRoutes = [
   { method: "POST", path: "/collection/{id}/updateplace/{placeid}", config: collectionController.updatePlace },
   { method: "GET", path: "/collections", config: collectionController.getCollections },
 
+  { method: "POST", path: "/collection/{id}/uploadimage", config: collectionController.uploadImage },
+
 ];
