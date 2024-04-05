@@ -34,7 +34,7 @@ suite("Collection Model tests", () => {
     assertSubset(mozart, collection);
   });
 
-  test("delete One Playist - success", async () => {
+  test("delete One Collection - success", async () => {
     const id = testCollections[0]._id;
     await db.collectionStore.deleteCollectionById(id);
     const returnedCollections = await db.collectionStore.getAllCollections();
