@@ -1,0 +1,61 @@
+{
+  "users": [
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "_id": "53280905-4654-4004-9594-d895253a2e77"
+    },
+    {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "_id": "1e368bc3-75e4-4946-b402-566824cdeaa6"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "_id": "a8f3fec8-be28-4fe0-a5d2-85fd8f23551d"
+    }
+  ],
+  "collections": [
+    {
+      "title": "Mozart Favourites",
+      "_id": "6c1e00c6-4a97-4f9e-af69-eb51e9f89db8"
+    }
+  ],
+
+  "places": [
+    {
+      "place": "Djouce",
+      "category": "Peak",
+      "description": "Djouce at 725 metres, is the 74th highest peak in Ireland ",
+      "lat": "53.1305° N",
+      "long": "6.2393° W",
+      "_id": "3e9fccab-e5b1-4fde-a1ae-621ed3d21cd4",
+      "collectionid": "6c1e00c6-4a97-4f9e-af69-eb51e9f89db8"
+    },
+    {
+      "place": "Glendalough",
+      "category": "Valley",
+      "description": "Glendalough is a glacial valley in County Wicklow, Ireland",
+      "lat": "53.0089° N",
+      "long": "6.3267° W",
+      "_id": "5df1d789-c196-40e8-9b64-b95fc579981f",
+      "collectionid": "6c1e00c6-4a97-4f9e-af69-eb51e9f89db8"
+    },
+    {
+      "place": "Kilkenny",
+      "category": "City",
+      "description": "Kilkenny is a city in County Kilkenny, Ireland",
+      "lat": "52.6541° N",
+      "long": "7.2523° W",
+      "_id": "5073e1f7-59d3-43ae-b51f-86a2d0f7aad7",
+      "collectionid": "6c1e00c6-4a97-4f9e-af69-eb51e9f89db8"
+    }
+  ]
+}

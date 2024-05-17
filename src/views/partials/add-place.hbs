@@ -1,0 +1,23 @@
+<form class="box" action="/collection/{{collection._id}}/addplace" method="POST">
+  <label>Register a Place:</label>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Place" name="place">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Category" name="category">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Description" name="description">
+      </div>
+      <div class="field">
+        <input class="input" type="number" placeholder="Enter Latitude" name="lat" value="0" step="any">
+      </div>
+      <div class="field">
+        <input class="input" type="number" placeholder="Enter Longitude" name="long" value="0" step="any">
+      </div>
+    </div>
+  </div>
+  <button class="button is-primary">Add Place</button>
+</form>

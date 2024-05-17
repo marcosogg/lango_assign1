@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero is-info is-small">
+    <div class="hero-head"></div>
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title">
+                Welcome to LANGO!
+            </h1>
+            {{!-- <h2 class="subtitle">
+                Discover the Earth's Hidden Gems with Lango: Your Ultimate Land Geographic Organizer
+            </h2> --}}
+        </div>
+    </div>
+    <div class="hero-foot"></div>
+</section>
+
+
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-foot"></div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            {{{content}}}
+            {{> error }}
+        </div>
+    </section>
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+</body>
+</html>
