@@ -21,6 +21,10 @@ if (result.error) {
   // process.exit(1);
 }
 
+// Debug logging to check environment variables
+console.log('Environment Variables:');
+console.log('COOKIE_PASSWORD:', process.env.cookie_password);
+
 async function init() {
   const server = Hapi.server({
     port: process.env.PORT || 3000,

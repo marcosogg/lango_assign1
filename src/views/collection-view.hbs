@@ -1,14 +1,25 @@
 {{> menu}}
 
-<section class="section columns is-vcentered">
-  <div class="column has-text-centered">
-    <div class="title">
-      {{collection.title}}
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8">
+        <div class="box">
+          <h1 class="title has-text-centered">{{collection.title}}</h1>
+          <hr>
+          <h2 class="subtitle">Places in this Collection:</h2>
+          {{> list-places}}
+          <hr>
+          <h2 class="subtitle">Add a New Place:</h2>
+          {{> add-place}}
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="box">
+          <h2 class="subtitle has-text-centered">Collection Image</h2>
+          {{> collection-image }}
+        </div>
+      </div>
     </div>
-    {{> list-places}}
-    {{> add-place}}
-  </div>
-  <div class="column">
-    {{> collection-image }}
   </div>
 </section>
