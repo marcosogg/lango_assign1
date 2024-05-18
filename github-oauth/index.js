@@ -3,11 +3,11 @@ const axios = require('axios');
 const querystring = require('querystring');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-const clientID = 'Ov23liDmlYykrWIWsdFO';
-const clientSecret = '4b5abb962e916ca7af8ab3eddbd0cbd4e8d50c22';
-const redirectURI = 'https://lango-assign1.onrender.com/github/callback';
+const clientID = process.env.GITHUB_CLIENT_ID;
+const clientSecret = process.env.GITHUB_CLIENT_SECRET;
+const redirectURI = 'https://lango-5zap.onrender.com/github/callback';
 
 app.get('/', (req, res) => {
     res.send('<a href="/login/github">Login with GitHub</a>');
