@@ -1,4 +1,3 @@
-//OAuth implementation
 const express = require('express');
 const axios = require('axios');
 const querystring = require('querystring');
