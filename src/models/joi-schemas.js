@@ -25,7 +25,7 @@ export const PlaceSpec = {
   category: Joi.string().required().trim(),
   description: Joi.string().required().trim(),
   lat: Joi.number().min(-90).max(90).required(),  // Valid latitude range
-  long: Joi.number().min(-180).max(180).required()  // Valid longitude range
+  long: Joi.number().min(-180).max(180).required(),
 };
 
 export const CollectionSpec = {

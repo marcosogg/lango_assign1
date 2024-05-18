@@ -8,7 +8,7 @@ const placeSchema = new Schema({
   description: String,
   lat: Number,
   long: Number,
-
+  img: String,
 
   collectionid: {
     type: Schema.Types.ObjectId,
