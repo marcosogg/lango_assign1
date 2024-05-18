@@ -15,14 +15,8 @@ export const collectionController = {
   },
 
   addPlace: {
-    validate: {
-      payload: PlaceSpec,
-      options: { abortEarly: false },
-      failAction: function (request, h, error) {
-        return h.view("collection-view", { title: "Add place error", errors: error.details }).takeover().code(400);
-      },
-    },
     handler: async function (request, h) {
+      const url = await imageStore.uploadImage(request.payload.imagefile);
       const collection = await db.collectionStore.getCollectionById(request.params.id);
       const newPlace = {
         place: request.payload.place,
@@ -30,9 +24,16 @@ export const collectionController = {
         description: request.payload.description,
         lat: Number(request.payload.lat),
         long: Number(request.payload.long),
+        img: url
       };
       await db.placeStore.addPlace(collection._id, newPlace);
       return h.redirect(`/collection/${collection._id}`);
+    },
+    payload: {
+      multipart: true,
+      output: "data",
+      maxBytes: 209715200,
+      parse: true,
     },
   },
   
@@ -53,6 +54,7 @@ export const collectionController = {
   },
   updatePlace: {
     handler: async function(request, h) {
+      const url = await imageStore.uploadImage(request.payload.imagefile);
       const placeId = request.params.placeid;
       const place = await db.placeStore.getPlaceById(placeId);
   
@@ -68,11 +70,18 @@ export const collectionController = {
         description: request.payload.description || place.description,
         lat: Number(request.payload.lat) || place.lat,
         long: Number(request.payload.long) || place.long,
+        img: url || place.img
       };
   
       await db.placeStore.updatePlace(placeId, updatedPlace);
   
       return h.redirect(`/collection/${request.params.id}`);
+    },
+    payload: {
+      multipart: true,
+      output: "data",
+      maxBytes: 209715200,
+      parse: true,
     },
   },
   getCollections: {
@@ -106,5 +115,5 @@ export const collectionController = {
       parse: true,
     },
   },
-
+  
 };
