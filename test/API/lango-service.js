@@ -24,6 +24,11 @@ export const langoService = {
     return res.data;
   },
 
+  async deleteUser(id) {
+    const res = await axios.delete(`${this.langoUrl}/api/users/${id}`);
+    return res.data;
+  },
+
   async createCollection(collection) {
     const res = await axios.post(`${this.langoUrl}/api/collections`, collection);
     return res.data;

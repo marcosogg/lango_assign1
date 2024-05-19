@@ -1,66 +1,61 @@
+import { EventEmitter } from "events";
 import { assert } from "chai";
-import { assertSubset } from "../test-utils.js";
 import { langoService } from "./lango-service.js";
-import { maggie, mozart, testCollections, testPlaces, concerto } from "../fixtures.js";
+import { assertSubset } from "../test-utils.js";
+import { maggie, mozart, testCollections } from "../fixtures.js";
 
-suite("Place API tests", () => {
+EventEmitter.setMaxListeners(25);
+
+describe("Places API tests", () => {
   let user = null;
-  let beethovenSonatas = null;
 
-  setup(async () => {
-    await langoService.deleteAllCollections();
-    await langoService.deleteAllUsers();
+  before(async () => {
     await langoService.deleteAllPlaces();
+    await langoService.deleteAllUsers();
     user = await langoService.createUser(maggie);
     mozart.userid = user._id;
-    beethovenSonatas = await langoService.createCollection(mozart);
   });
 
-  teardown(async () => {});
-
-  test("create place", async () => {
-    const returnedPlace = await langoService.createPlace(beethovenSonatas._id, concerto);
-    assertSubset(concerto, returnedPlace);
+  after(async () => {
+    // Clean up if needed
   });
 
-  test("create Multiple places", async () => {
-    for (let i = 0; i < testPlaces.length; i += 1) {
-      // eslint-disable-next-line no-await-in-loop
-      await langoService.createPlace(beethovenSonatas._id, testPlaces[i]);
-    }
-    const returnedPlaces = await langoService.getAllPlaces();
-    assert.equal(returnedPlaces.length, testPlaces.length);
-    for (let i = 0; i < returnedPlaces.length; i += 1) {
-      // eslint-disable-next-line no-await-in-loop
-      const place = await langoService.getPlace(returnedPlaces[i]._id);
-      assertSubset(place, returnedPlaces[i]);
+  it("should create place", async () => {
+    const returnedPlace = await langoService.createPlace(mozart);
+    assert.isNotNull(returnedPlace);
+    assertSubset(mozart, returnedPlace);
+  });
+
+  it("should delete a place", async () => {
+    const place = await langoService.createPlace(mozart);
+    const response = await langoService.deletePlace(place._id);
+    assert.equal(response.status, 204);
+    try {
+      await langoService.getPlace(place._id);
+      assert.fail("Should not return a response");
+    } catch (error) {
+      assert(error.response.data.message === "No Place with this id", "Incorrect Response Message");
     }
   });
 
-  test("Delete PlaceApi", async () => {
-    for (let i = 0; i < testPlaces.length; i += 1) {
-      // eslint-disable-next-line no-await-in-loop
-      await langoService.createPlace(beethovenSonatas._id, testPlaces[i]);
+  it("should create multiple places", async () => {
+    for (let i = 0; i < testCollections.length; i += 1) {
+      testCollections[i].userid = user._id;
+      await langoService.createPlace(testCollections[i]);
     }
-    let returnedPlaces = await langoService.getAllPlaces();
-    assert.equal(returnedPlaces.length, testPlaces.length);
-    for (let i = 0; i < returnedPlaces.length; i += 1) {
-      // eslint-disable-next-line no-await-in-loop
-      const place = await langoService.deletePlace(returnedPlaces[i]._id);
-    }
-    returnedPlaces = await langoService.getAllPlaces();
-    assert.equal(returnedPlaces.length, 0);
+    let returnedLists = await langoService.getAllPlaces();
+    assert.equal(returnedLists.length, testCollections.length);
+    await langoService.deleteAllPlaces();
+    returnedLists = await langoService.getAllPlaces();
+    assert.equal(returnedLists.length, 0);
   });
 
-  test("denormalised collection", async () => {
-    for (let i = 0; i < testPlaces.length; i += 1) {
-      // eslint-disable-next-line no-await-in-loop
-      await langoService.createPlace(beethovenSonatas._id, testPlaces[i]);
-    }
-    const returnedCollection = await langoService.getCollection(beethovenSonatas._id);
-    assert.equal(returnedCollection.places.length, testPlaces.length);
-    for (let i = 0; i < testPlaces.length; i += 1) {
-      assertSubset(testPlaces[i], returnedCollection.places[i]);
+  it("should remove non-existent place", async () => {
+    try {
+      await langoService.deletePlace("not an id");
+      assert.fail("Should not return a response");
+    } catch (error) {
+      assert(error.response.data.message === "No Place with this id", "Incorrect Response Message");
     }
   });
 });
