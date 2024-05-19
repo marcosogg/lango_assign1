@@ -2,24 +2,23 @@
 
 <section class="section">
   <div class="container">
-    <div class="columns">
-      <div class="column is-8">
+    <div class="columns is-centered">
+      <div class="column is-10">
         <div class="box">
           <h1 class="title has-text-centered">{{collection.title}}</h1>
           <hr>
-          <h2 class="subtitle">Places in this Collection:</h2>
-          {{> list-places}}
+          <h2 class="subtitle has-text-weight-semibold">Places in this Collection:</h2>
+          <div class="table-container">
+            {{> list-places}}
+          </div>
           <hr>
-          <h2 class="subtitle">Add a New Place:</h2>
-          {{> add-place}}
-        </div>
-      </div>
-      <div class="column is-4">
-        <div class="box">
-          <h2 class="subtitle has-text-centered">Collection Image</h2>
-          {{> collection-image }}
+          <h2 class="subtitle has-text-weight-semibold">Add a New Place:</h2>
+          <div class="box">
+            {{> add-place}}
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
