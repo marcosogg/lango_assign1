@@ -1,6 +1,6 @@
 {{> menu}}
 
-<form class="box" method="POST" action="/collection/{{collection._id}}/updateplace/{{place._id}} enctype="multipart/form-data">
+<form class="box" method="POST" action="/collection/{{collection._id}}/updateplace/{{place._id}}">
   <label>Update a Place:</label>
   <div class="field is-horizontal">
     <div class="field-body">
@@ -20,11 +20,11 @@
         <input class="input" type="number" placeholder="Enter Longitude" name="long" value="{{place.long}}" step="any" required>
       </div>
 
-  <div class="card-image">
-    <figure class="image is-256x256">
-      <img src={{place.img}}>
-    </figure>
-  </div>
+      <div class="card-image">
+        <figure class="image is-256x256">
+          <img src={{place.img}}>
+        </figure>
+      </div>
   
 
     </div>
