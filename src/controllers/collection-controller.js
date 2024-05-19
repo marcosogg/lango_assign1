@@ -14,6 +14,17 @@ export const collectionController = {
     },
   },
 
+  findAll: {
+    handler: async function (request, h) {
+      const places = await db.placeStore.getAllPlaces();
+      const viewData = {
+        title: "Places",
+        places: places
+      };
+      return h.view("places-view", viewData);
+    },
+  },
+
   addPlace: {
     handler: async function (request, h) {
       const url = await imageStore.uploadImage(request.payload.imagefile);

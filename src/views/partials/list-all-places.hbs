@@ -1,0 +1,24 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Place</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each places}}
+    <tr>
+      <td><img src="{{img}}" width="80px" height="80px"/></td>
+      <td>{{place}}</td>
+      <td>{{category}}</td>
+      <td>{{description}}</td>
+      <td>{{lat}}</td>
+      <td>{{long}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
