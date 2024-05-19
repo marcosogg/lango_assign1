@@ -54,28 +54,34 @@ export const collectionController = {
   },
   updatePlace: {
     handler: async function(request, h) {
-      const url = await imageStore.uploadImage(request.payload.imagefile);
-      const placeId = request.params.placeid;
-      const place = await db.placeStore.getPlaceById(placeId);
-  
-      if (!place) {
-        // Handle the case where the place is not found
-        console.log(`Place with ID ${placeId} not found.`);
-        return h.response("Place not found").code(404);
+
+      try {
+        const placeId = request.params.placeid;
+
+        const place = await db.placeStore.getPlaceById(placeId);
+        console.log()
+
+        if (!place) {
+          console.log(`Place with ID ${placeId} not found.`);
+          return h.response("Place not found").code(404);
+        }
+
+        const updatedPlace = {
+          place: request.payload.place || place.place,
+          category: request.payload.category || place.category,
+          description: request.payload.description || place.description,
+          lat: Number(request.payload.lat) || place.lat,
+          long:Number(request.payload.long) || place.long,
+          img: place.img
+        };
+
+        await db.placeStore.updatePlace(placeId, updatedPlace);
+
+        return h.redirect(`/collection/${request.params.id}`);
+      } catch (err) {
+        console.error("Error updating place:", err);
+        return h.response("Internal Server Error").code(500);
       }
-  
-      const updatedPlace = {
-        place: request.payload.place || place.place,
-        category: request.payload.category || place.category,
-        description: request.payload.description || place.description,
-        lat: Number(request.payload.lat) || place.lat,
-        long: Number(request.payload.long) || place.long,
-        img: url || place.img
-      };
-  
-      await db.placeStore.updatePlace(placeId, updatedPlace);
-  
-      return h.redirect(`/collection/${request.params.id}`);
     },
     payload: {
       multipart: true,

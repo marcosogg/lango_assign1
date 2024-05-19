@@ -21,6 +21,7 @@ export const placeMongoStore = {
   async getPlaceById(id) {
     if (id) {
       const place = await Place.findOne({ _id: id }).lean();
+      console.log("getPlaceById: ", place)
       return place;
     }
     return null;
@@ -39,6 +40,7 @@ export const placeMongoStore = {
   },
 
   async updatePlace(placeId, updatedPlace) {
+    console.log("updatePlace: ", placeId);
     const placeDoc = await Place.findOne({ _id: placeId });
   
     if (!placeDoc) {
